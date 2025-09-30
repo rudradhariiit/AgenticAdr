@@ -1,0 +1,9 @@
+---
+### ADR-004: Backend Technology Stack (Python with FastAPI)
+
+**Status:** Inferred
+**Context:** We need a backend technology stack that enables rapid development, is performant enough for initial and mid-term growth, has a strong ecosystem, and attracts skilled developers. Given our modular monolith approach, the framework should support clear separation of concerns and be suitable for API-driven development, providing robust endpoints for our frontend and potential third-party integrations.
+**Decision:** We will use Python as our primary backend language, leveraging the FastAPI framework. Python offers excellent developer productivity, a vast array of libraries, and a large talent pool. FastAPI is chosen for its modern approach, exceptional performance (on par with Node.js and Go for I/O-bound tasks due to async/await), automatic interactive API documentation (Swagger UI/ReDoc) through OpenAPI, and strong type hint integration which improves code quality and maintainability.
+**Consequences:**
+*   **Positive:** High developer productivity, excellent performance for I/O-bound tasks, strong type safety with Pydantic models for data validation, automatic API documentation, robust ecosystem of Python libraries, and a relatively shallow learning curve for Python developers. Future integration with machine learning/data science components is seamless.
+*   **Negative:** CPU-bound tasks may not perform as well as compiled languages (e.g., Go, Java) due to Python's Global Interpreter Lock (GIL), though this is less of an issue for typical web APIs. Debugging async code can sometimes be more complex. Dependency management can sometimes be tricky in Python projects, requiring careful use of tools like Poetry or `pip-tools`.

@@ -1,0 +1,9 @@
+---
+### ADR-003: Primary Data Store (PostgreSQL with AWS RDS)
+
+**Status:** Inferred
+**Context:** Our SaaS application will primarily manage structured business data, including user profiles, subscriptions, product configurations, and transactional information. We require strong data consistency, transactional integrity (ACID properties), and robust querying capabilities with support for complex relationships. Future needs might include analytical queries and potentially some unstructured data, but the core remains relational.
+**Decision:** PostgreSQL will be our primary relational database. It is a powerful, open-source, and highly extensible object-relational database system known for its reliability, feature richness (including JSONB, GIS, full-text search), and strong community support. We will use AWS RDS for PostgreSQL to reduce operational burden, offloading tasks like backups, patching, and scaling. Its flexibility allows us to handle structured data efficiently while offering capabilities for semi-structured data (JSONB) should the need arise.
+**Consequences:**
+*   **Positive:** Strong ACID compliance, robust data integrity, wide support for complex queries and joins, active community and extensive tooling, extensibility, excellent performance for structured data, and suitability for transactional workloads. AWS RDS simplifies operations significantly (automated backups, point-in-time recovery, read replicas, automatic patching, scaling options).
+*   **Negative:** Scaling reads can be more complex than NoSQL databases (though RDS Read Replicas help). Schema migrations require careful planning and execution. May not be ideal for extremely high-volume, unstructured, or highly distributed datasets (though extensions and sharding can address some of these, adding complexity). Expertise in SQL and relational modeling is required.
