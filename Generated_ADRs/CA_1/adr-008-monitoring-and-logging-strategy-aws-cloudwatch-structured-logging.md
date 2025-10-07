@@ -1,9 +1,0 @@
----
-### ADR-008: Monitoring and Logging Strategy (AWS CloudWatch + Structured Logging)
-
-**Status:** Inferred
-**Context:** To ensure the reliability, performance, and security of our SaaS application, we need a comprehensive strategy for monitoring its health and collecting logs. This includes application metrics, infrastructure metrics, and detailed application logs for debugging and auditing. Early detection of issues and efficient troubleshooting are paramount for maintaining customer satisfaction and operational stability.
-**Decision:** We will leverage AWS CloudWatch for infrastructure and application metrics, alarms, and dashboards. For application logs, we will standardize on structured logging within our application (e.g., JSON format) and direct all logs to AWS CloudWatch Logs. This approach provides an integrated monitoring and logging solution within our chosen cloud provider. If the volume and complexity of logs later warrant more advanced search, analysis, and visualization capabilities, we will evaluate integrating CloudWatch Logs with AWS OpenSearch Service (successor to Amazon Elasticsearch Service) or a third-party SaaS logging solution.
-**Consequences:**
-*   **Positive:** Integrated monitoring and logging with our chosen cloud provider, robust metrics collection and alerting capabilities, centralized log storage, improved troubleshooting and debugging efficiency, better visibility into application health and performance. Structured logging aids automated analysis and parsing.
-*   **Negative:** CloudWatch Logs can be less powerful for complex ad-hoc queries compared to dedicated logging platforms; an external solution may incur additional cost and management overhead if the standard features are insufficient. Proper instrumentation and log level management are crucial for effective monitoring and avoiding excessive costs. A steep learning curve for advanced CloudWatch features.

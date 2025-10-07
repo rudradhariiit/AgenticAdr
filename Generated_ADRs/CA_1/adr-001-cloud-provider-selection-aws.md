@@ -1,8 +1,0 @@
-### ADR-001: Cloud Provider Selection (AWS)
-
-**Status:** Inferred
-**Context:** As a new SaaS company, we need a robust, scalable, and cost-effective cloud infrastructure to host our application. Key considerations include global reach, a comprehensive suite of services, strong community support, and initial cost-effectiveness with a clear path to scale. We anticipate a need for compute, database, storage, networking, and potentially more specialized services in the future. Our team has existing familiarity with AWS concepts.
-**Decision:** We will standardize on Amazon Web Services (AWS) as our primary cloud provider. AWS offers the broadest set of services, a mature ecosystem, extensive documentation, and the largest market share, which translates to a large talent pool and community support. While other providers like Azure and GCP are strong contenders, AWS's comprehensive offerings provide the best balance of features, scalability, and long-term viability for a startup. We will leverage services like EC2, RDS, S3, VPC, IAM, and CloudWatch as foundational components.
-**Consequences:**
-*   **Positive:** Access to a vast array of managed services, high scalability and reliability, extensive documentation and community support, well-defined security controls, and a flexible pay-as-you-go model. Potential for global reach and faster time-to-market due to managed services. Existing team familiarity reduces initial learning curve.
-*   **Negative:** Potential for vendor lock-in, complexity of managing a large number of services, cost optimization requires careful management and expertise, and a steep learning curve for new team members unfamiliar with AWS. Future migration to another cloud provider would be non-trivial.

@@ -1,9 +1,0 @@
----
-### ADR-006: Deployment Strategy (Containerized Services on AWS Fargate)
-
-**Status:** Inferred
-**Context:** We need a deployment strategy that offers scalability, resilience, ease of management, and consistency across development, testing, and production environments. Our Modular Monolith architecture is amenable to containerization. We want to minimize operational overhead related to server provisioning, patching, and scaling.
-**Decision:** We will containerize our application using Docker and deploy it to AWS Fargate, managed by Amazon ECS (Elastic Container Service). This approach allows us to package our application and its dependencies into isolated, portable containers, ensuring consistent environments from local development to production. AWS Fargate provides a serverless compute engine for containers, abstracting away the need to provision, configure, and scale EC2 instances. This significantly reduces operational burden while offering high availability and scalability. We will use AWS ECR (Elastic Container Registry) for storing our Docker images.
-**Consequences:**
-*   **Positive:** Reduced operational overhead (no server management), automatic scaling of container instances, high availability, consistent environments across the software development lifecycle, improved resource utilization. Faster deployment times compared to traditional VM-based deployments.
-*   **Negative:** Learning curve for Docker and ECS/Fargate concepts. Debugging can be slightly more challenging in a containerized, serverless environment compared to direct server access. Cold start times for new containers can sometimes be a concern (though usually negligible for typical web applications). Cost optimization requires careful monitoring and proper resource allocation.

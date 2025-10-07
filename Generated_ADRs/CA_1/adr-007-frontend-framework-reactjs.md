@@ -1,9 +1,0 @@
----
-### ADR-007: Frontend Framework (React.js)
-
-**Status:** Inferred
-**Context:** We need a robust, performant, and developer-friendly frontend framework to build our user interface. Key considerations include a strong ecosystem, active community support, component-based architecture for reusability, and good performance characteristics for a dynamic SaaS application. The framework should also be attractive to skilled frontend developers.
-**Decision:** We will use React.js as our primary frontend framework. React is a highly popular, declarative, component-based JavaScript library for building user interfaces, backed by Facebook and a massive community. Its virtual DOM approach allows for efficient UI updates, and its vast ecosystem provides solutions for routing, state management, and component libraries. This choice will enable rapid development of interactive user interfaces and ensure we can easily find experienced developers.
-**Consequences:**
-*   **Positive:** High developer productivity, large and active community, extensive ecosystem of libraries and tools (e.g., Redux, Next.js, Material-UI), component reusability, strong performance due to virtual DOM, and excellent job market demand for React developers. Allows for a declarative UI approach.
-*   **Negative:** Can have a steep learning curve for beginners, especially when combined with state management libraries (e.g., Redux). The rapid pace of change in the React ecosystem can sometimes lead to "framework fatigue" and require constant learning. Requires careful management of component structure to avoid prop drilling or overly complex state.
